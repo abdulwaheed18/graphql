@@ -1,0 +1,15 @@
+type Repo {
+    id: ID!
+    repoName: String!
+    description: String!
+    url: String!
+}
+
+type Query {
+    findAllRepo: [Repo]!
+    totalRepos: Long!
+}
+
+type Mutation {
+    addRepo(repoName: String!, description: String!, url : String!) : Repo!
+}

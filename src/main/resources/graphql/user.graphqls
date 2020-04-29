@@ -1,0 +1,18 @@
+type User {
+    id: ID!
+    login: String!
+    username: String!
+    email: String!
+    repo: Repo
+}
+
+extend type Query {
+    findAllUsers: [User]!
+    totalUsers: Long!
+}
+
+extend type Mutation {
+    newUser(login: String!, username: String!, email: String!, repo: ID!) : User!
+    deleteUser(id: ID!) : Boolean
+   updateEmail(email: String!, id: ID!) : User!
+}
